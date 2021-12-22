@@ -35,7 +35,7 @@ const my_team_logs = (req, res) => {
   FROM users
   JOIN event_logs on users.id = event_logs.user_id
   JOIN user_teams on users.id = user_teams.user_id
-  WHERE user_teams.team_id = (SELECT team_id FROM user_teams WHERE user_id = (?)) AND event_logs.timestamp between "${today}" and "${endToday}";`;
+  WHERE user_teams.team_id = (SELECT team_id FROM user_teams WHERE user_id = (?));`;
   db.query(getMyTeamLogs, userID, (err, result) => {
     console.log(result);
     if (!result || result.length == 0)
