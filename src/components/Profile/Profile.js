@@ -25,7 +25,7 @@ export default function Profile({ isAuthenticated }) {
     if (!isAuthenticated) {
       navigate("/");
     } else {
-      Axios.get(`http://localhost:3000/api/event?user_id=${userId}`).then(
+      Axios.get(`/api/event?user_id=${userId}`).then(
         (res) => {
           const { data } = res;
           setEventLogData(data);

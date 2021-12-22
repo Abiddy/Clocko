@@ -22,7 +22,7 @@ function Login({ setIsAuthenticated, isAuthenticated }) {
 
   // post request to check if user exists and login
   const submitUser = () => {
-    Axios.post("http://localhost:3000/api/user/login", {
+    Axios.post("/api/user/login", {
       password: password,
       email: email,
     }).then((res) => {

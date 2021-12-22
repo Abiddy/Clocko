@@ -13,7 +13,7 @@ function UserForm() {
 
   const submitUser = () => {
     // post request to create user
-    Axios.post("http://localhost:3000/api/user/user_create", {
+    Axios.post("/api/user/user_create", {
       fullname: fullname,
       password: password,
       email: email,

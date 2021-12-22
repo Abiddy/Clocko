@@ -30,7 +30,7 @@ const Timer = ({ eventLogData = [], userId }) => {
   }, [eventLogData]);
 
   const handleClockIn = () => {
-    Axios.post("http://localhost:3000/api/event", {
+    Axios.post("/api/event", {
       clocked_in: true,
       user_id: userId,
     }).then(() => {
@@ -39,7 +39,7 @@ const Timer = ({ eventLogData = [], userId }) => {
   }
 
   const handleClockOut = () => {
-    Axios.post("http://localhost:3000/api/event", {
+    Axios.post("/api/event", {
       clocked_in: false,
       user_id: userId,
       shift_id: lastEventLog.shift_id
@@ -47,7 +47,7 @@ const Timer = ({ eventLogData = [], userId }) => {
       handleReset();
     });
   }
-  
+
   return (
     <div className="app">
       <div className="stopwatch-card">

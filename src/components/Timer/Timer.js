@@ -34,7 +34,7 @@ const Timer = ({ eventLogData = [], userId }) => {
 
   // handles request to post clock in data
   const handleClockIn = () => {
-    Axios.post("http://localhost:3000/api/event", {
+    Axios.post("/api/event", {
       clocked_in: true,
       user_id: userId,
     }).then(() => {
@@ -44,7 +44,7 @@ const Timer = ({ eventLogData = [], userId }) => {
 
   // handles request to post clock out data
   const handleClockOut = () => {
-    Axios.post("http://localhost:3000/api/event", {
+    Axios.post("/api/event", {
       clocked_in: false,
       user_id: userId,
       shift_id: lastEventLog.shift_id,

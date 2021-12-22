@@ -14,7 +14,7 @@ function TeamLogs() {
   // gets team info
   function loadActivities() {
     let userID = JSON.parse(localStorage.userInfo).id;
-    Axios.get(`http://localhost:3000/api/user/team`, {
+    Axios.get(`/api/user/team`, {
       params: {
         userID: userID,
       },
@@ -24,9 +24,9 @@ function TeamLogs() {
 
       let map = new Map();
       (Object.values(formattedData)).forEach((value) => {
-          map.set(value.userId, value);
+        map.set(value.userId, value);
       });
-      
+
       setActivities(Array.from(map.values()));
     });
   }
