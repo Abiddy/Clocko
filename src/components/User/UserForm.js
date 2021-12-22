@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Axios from "axios";
+import { useNavigate } from "react-router-dom";
 import { Form, Button, Container } from "react-bootstrap";
 
 /**
@@ -10,6 +11,7 @@ function UserForm() {
   const [fullname, setFullname] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+  const navigate = useNavigate()
 
   const submitUser = () => {
     // post request to create user
@@ -17,6 +19,8 @@ function UserForm() {
       fullname: fullname,
       password: password,
       email: email,
+    }).then(() => {
+      navigate('/')
     });
   };
   return (
