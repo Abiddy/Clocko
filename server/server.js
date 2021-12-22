@@ -1,6 +1,6 @@
 const express = require("express");
 const path = require("path");
-const bodyParser = require("body-parser");
+
 const app = express();
 
 const user = require("./user/user");
@@ -16,9 +16,7 @@ function checkHttps(request, response, next) {
   }
 }
 
-// app.all("*", checkHttps);
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+app.all("*", checkHttps);
 
 // A test route to make sure the server is up.
 app.get("/api/ping", (request, response) => {
