@@ -1,4 +1,4 @@
-# Kloko
+# React Clock App
 
 ## _A work-shift time tracker for employees_
 
